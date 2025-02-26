@@ -66,64 +66,123 @@ export default function SustainabilitySurvey() {
   };
 
   const submitAnswers = () => {
-    let advice = "✅ Thank you for completing the assessment! 🌱 Here are some tailored sustainability recommendations based on your responses: \n";
-    
+    let advice = "✅ Thank you for completing the assessment! 🌱 Here are some tailored sustainability recommendations based on your responses:\n\n";
+
     // **Company Size** - Focus on Practical, Actionable Goals
     if (answers["What is your company's size?"] === "Small") {
-      advice += "- **Goal**: As a small company, sustainability efforts can have a significant, visible impact. Begin by reducing your energy consumption through a combination of upgrading to LED lighting, and scheduling regular energy audits. Your goal should be to reduce overall energy use by 15% in 12 months. Start by engaging your employees with energy-saving challenges, and track your progress using monthly electricity bills.\n";
-      advice += "- **Goal**: Focus on waste reduction by starting small. Aim to achieve a 50% reduction in waste within 6 months by establishing a paper recycling program. Educate your employees about the importance of recycling and offer incentives for reducing waste.\n";
+      advice += `
+      **Recommendations for Small Companies:**
+      - **Goal**: Reduce energy consumption by 15% within 12 months by upgrading to LED lighting and scheduling monthly energy audits.
+      - **Action**: Start with a 10% reduction in electricity bills by reducing equipment usage after hours. Measure success using monthly utility bills.
+      - **Action**: Encourage employee participation by offering incentives for energy-saving initiatives. Track progress by measuring energy use per employee.
+      - **Action**: Conduct simple employee workshops to raise awareness about energy-saving and sustainability practices.
+      - **Timeframe**: 12 months for a 15% reduction in energy consumption.
+      `;
     } else if (answers["What is your company's size?"] === "Medium") {
-      advice += "- **Goal**: As a medium-sized business, you have more room to implement scalable energy solutions. Upgrade your HVAC systems to energy-efficient models within 6 months, and begin transitioning to solar energy for at least 15% of your electricity usage. Aim for a 20% reduction in overall energy consumption in the next 18 months.\n";
-      advice += "- **Goal**: Reduce your water usage by 25% within the next year. Install water-efficient appliances like low-flow toilets and urinals in all offices, and monitor water usage monthly through smart meters.\n";
+      advice += `
+      **Recommendations for Medium-Sized Companies:**
+      - **Goal**: Reduce overall energy consumption by 20% in 18 months.
+      - **Action**: Implement energy-efficient HVAC systems and upgrade insulation to reduce heating/cooling costs.
+      - **Action**: Install energy-saving appliances and automate lighting controls in office spaces.
+      - **Action**: Implement a system for monitoring energy consumption using smart meters, aiming for a 20% reduction within 18 months.
+      - **Timeframe**: 18 months for a 20% reduction in energy consumption.
+      `;
     } else if (answers["What is your company's size?"] === "Large") {
-      advice += "- **Goal**: As a large company, sustainability must be embedded across all levels. Aim for a **50% reduction in carbon emissions** within 5 years, starting with an investment in renewable energy like solar or wind power. To kick off, purchase renewable energy certificates (RECs) to cover 20% of your energy usage in the first year. This can be tracked using yearly carbon audits.\n";
-      advice += "- **Goal**: Implement an extensive waste management program that goes beyond recycling. Aim for zero waste by 2025 by introducing a company-wide composting program and reducing single-use plastics by 75% within the next 12 months. This should be tracked through quarterly waste audits.\n";
+      advice += `
+      **Recommendations for Large Companies:**
+      - **Goal**: Achieve a 50% reduction in carbon emissions by 2025.
+      - **Action**: Invest in large-scale renewable energy projects, such as solar panel installations on office buildings or switching to wind energy for operations.
+      - **Action**: Transition your entire fleet to electric vehicles by 2027 and achieve carbon neutrality by 2030.
+      - **Action**: Track emissions using carbon footprint tools and ensure all branches and offices follow the same sustainability measures.
+      - **Timeframe**: 50% reduction in carbon emissions by 2025.
+      `;
     }
 
     // **Energy Consumption**
     if (answers["Does your company track energy consumption?"] === "No") {
-      advice += "- **Goal**: Start tracking energy consumption within the next month. Begin with installing smart meters and set monthly energy consumption targets for the next 6 months to reduce energy use by 10%. Gradually implement energy-saving technologies, such as LED lighting and programmable thermostats.\n";
+      advice += `
+      **Recommendations for Energy Consumption Tracking:**
+      - **Goal**: Start tracking energy consumption within the next month.
+      - **Action**: Install smart meters across all company facilities to monitor real-time energy use.
+      - **Action**: Set a target to reduce energy use by 10% within 6 months.
+      - **Action**: Create a monthly report to monitor progress and identify energy-intensive processes.
+      - **Timeframe**: Begin tracking within 1 month, aim for 10% reduction in 6 months.
+      `;
     }
 
     // **Primary Energy Source**
     if (answers["What is your primary energy source?"] === "Non-renewable") {
-      advice += "- **Goal**: Commit to transitioning 20% of your energy consumption to renewable sources in the next 12 months. Begin by evaluating the feasibility of installing solar panels or purchasing green energy from your provider. If direct energy conversion isn’t possible, focus on carbon offset programs.\n";
-    } else if (answers["What is your primary energy source?"] === "Mixed") {
-      advice += "- **Goal**: Transition 10% of your energy use to renewable sources by the end of this year. Work with local renewable energy suppliers and track your energy consumption via monthly energy reports.\n";
+      advice += `
+      **Recommendations for Transitioning to Renewable Energy:**
+      - **Goal**: Transition 20% of energy use to renewable sources within 12 months.
+      - **Action**: Start with a purchase of renewable energy credits (RECs) to offset 20% of your energy usage.
+      - **Action**: Research installation options for solar or wind energy systems at your headquarters or manufacturing facility.
+      - **Action**: Partner with a renewable energy supplier to shift 20% of your power source to green energy.
+      - **Timeframe**: Achieve 20% renewable energy usage within 12 months.
+      `;
     }
 
     // **Waste Management**
     if (answers["Do you have a waste management strategy?"] === "No") {
-      advice += "- **Goal**: Develop and implement a formal waste management strategy within 6 months. Start by tracking your waste, and aim to divert at least 30% of it from landfills in the first year. Include strategies for reducing single-use plastics and increasing recycling rates.\n";
+      advice += `
+      **Recommendations for Waste Management Strategy:**
+      - **Goal**: Develop and implement a waste management strategy within the next 6 months.
+      - **Action**: Start with basic paper recycling and ensure that all employees use designated bins for recycling paper, plastic, and metals.
+      - **Action**: Partner with a certified waste management company to track waste types and optimize for recycling.
+      - **Timeframe**: 6 months for a full waste management implementation.
+      `;
     } else if (answers["Do you have a waste management strategy?"] === "Yes") {
-      advice += "- **Goal**: Expand your waste management strategy to include more comprehensive programs such as **zero-waste initiatives**. Aim for zero waste by 2025 and reduce your landfill waste by 40% within the next year. Regularly report on your progress to all employees.\n";
+      advice += `
+      **Recommendations for Optimizing Waste Management:**
+      - **Goal**: Achieve 100% recycling and composting in the next 12 months.
+      - **Action**: Implement a company-wide composting initiative for organic waste and ensure employees have access to compost bins.
+      - **Action**: Introduce a zero-waste policy for office events, eliminating single-use plastics and disposable cutlery.
+      - **Timeframe**: Achieve 100% recycling and composting within 12 months.
+      `;
     }
 
-    // **E-waste Management**
-    if (answers["How does your company handle and manage its e-waste?"] === "Disposal in landfills") {
-      advice += "- **Goal**: Make e-waste management a priority within the next 6 months. Set up a formal process for recycling all e-waste and commit to sending 100% of it to certified recycling centers. Track and report the amount of e-waste collected every quarter.\n";
+    // **Water Usage**
+    if (answers["How does your company reduce water usage?"] === "Not at all") {
+      advice += `
+      **Recommendations for Water Conservation:**
+      - **Goal**: Reduce water usage by 20% in the next 6 months.
+      - **Action**: Install water-saving devices such as low-flow faucets, low-flow toilets, and motion-sensor taps in all company facilities.
+      - **Action**: Introduce a policy for employees to use water responsibly and track water usage monthly.
+      - **Timeframe**: Achieve 20% reduction within 6 months.
+      `;
     }
 
     // **Carbon Footprint**
     if (answers["Does your company offset its carbon footprint?"] === "No") {
-      advice += "- **Goal**: Begin offsetting your carbon footprint by investing in carbon credits. Your first step should be to offset 10% of your annual emissions in the next 12 months, with the goal of reaching 50% by 2025.\n";
-    }
-
-    // **Sourcing Materials Sustainably**
-    if (answers["Do you source materials sustainably?"] === "No") {
-      advice += "- **Goal**: Start sourcing sustainable materials by identifying at least 3 ethical suppliers within the next 6 months. Make it a priority to ensure that all materials used in production are certified by sustainable and ethical standards by 2025.\n";
+      advice += `
+      **Recommendations for Carbon Offset:**
+      - **Goal**: Begin offsetting 10% of your carbon footprint by investing in certified carbon offset programs.
+      - **Action**: Research certified carbon offset programs such as tree planting or renewable energy projects.
+      - **Action**: Commit to purchasing carbon credits or investing in local environmental programs to offset your emissions.
+      - **Timeframe**: Offset 10% of emissions within 12 months.
+      `;
     }
 
     // **Supply Chain Transparency**
     if (answers["What is your company’s approach to supply chain transparency?"] === "No transparency") {
-      advice += "- **Goal**: Increase supply chain transparency by 50% within the next 12 months. Begin by tracking and reporting the environmental impact of at least 30% of your suppliers, focusing on reducing the carbon footprint and ensuring ethical labor practices.\n";
+      advice += `
+      **Recommendations for Supply Chain Transparency:**
+      - **Goal**: Achieve full transparency within the next 12 months.
+      - **Action**: Work with suppliers to identify their sustainability practices and audit the supply chain.
+      - **Action**: Publish a sustainability report detailing supply chain sourcing and any environmental concerns.
+      - **Timeframe**: Full transparency within 12 months.
+      `;
     }
 
     // **Geographical Zone-Specific Recommendations**
     if (answers["Which geographical zone is your company based in?"] === "North America") {
-      advice += "- **Goal**: In North America, you can take advantage of federal and state-level incentives for green energy initiatives. Work towards achieving a **30% reduction in emissions** by 2025 by transitioning your entire fleet to electric vehicles and installing solar panels on your office buildings.\n";
-    } else if (answers["Which geographical zone is your company based in?"] === "Europe") {
-      advice += "- **Goal**: The European Green Deal offers great support for sustainability efforts. Aim to reduce your carbon emissions by 40% by 2030, focusing on implementing energy-saving infrastructure and investing in renewable energy.\n";
+      advice += `
+      **Recommendations for North America:**
+      - **Goal**: Transition 30% of your operations to renewable energy sources in the next 2 years.
+      - **Action**: Start by purchasing renewable energy certificates (RECs) for 15% of your energy needs.
+      - **Action**: Explore tax credits available for solar energy installations.
+      - **Timeframe**: Achieve 30% renewable energy usage within 24 months.
+      `;
     }
 
     setRecommendations(advice);
@@ -158,4 +217,3 @@ export default function SustainabilitySurvey() {
     </div>
   );
 }
-
