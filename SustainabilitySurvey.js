@@ -5,7 +5,6 @@ export default function SustainabilitySurvey() {
   const [answers, setAnswers] = useState({});
   const [recommendations, setRecommendations] = useState(null);
 
-  // Questions with geographical zones
   const questions = [
     { 
       question: "What is your company's size?", 
@@ -61,48 +60,44 @@ export default function SustainabilitySurvey() {
   const submitAnswers = () => {
     let advice = "✅ Thank you for completing the assessment! 🌱 Here are some tailored sustainability recommendations based on your responses: \n";
     
-    // Question-specific tips and geographical zone-based recommendations
-    if (answers["Does your company track energy consumption?"] === "No") {
-      advice += "- Consider implementing an energy monitoring system to track consumption. \n";
+    // Company size-specific recommendations
+    if (answers["What is your company's size?"] === "Small") {
+      advice += "- As a small company, your sustainability initiatives can have a significant impact on your community. Focus on creating a culture of sustainability among your employees. Begin with simple steps like reducing paper usage and implementing energy-efficient lighting. Engage with local sustainability groups to form partnerships and amplify your efforts. A small company can also leverage local grants for green initiatives, making sustainability more affordable. \n";
+    } else if (answers["What is your company's size?"] === "Medium") {
+      advice += "- Medium-sized companies have the advantage of reaching a wider customer base. As you grow, it’s essential to scale your sustainability practices to match. Begin by adopting energy-efficient technologies and considering larger investments in renewable energy, such as installing solar panels. With a moderate number of employees, focus on reducing waste by promoting recycling and composting in your offices. Additionally, encourage your employees to use public transport or consider setting up a bike-to-work program. \n";
+    } else if (answers["What is your company's size?"] === "Large") {
+      advice += "- As a large corporation, you have the ability and responsibility to lead the charge in sustainability. Start by ensuring that your energy consumption is efficient and sustainable. Consider an energy audit to identify opportunities to reduce energy waste. Implement sustainability at the core of your business model by investing in green technologies, including energy-efficient machinery and low-carbon options for transportation. Engage your employees in sustainability initiatives and create a company-wide sustainability policy. Additionally, you should publicly commit to carbon neutrality, aiming for net-zero emissions by 2050. \n";
     }
     
+    // Energy consumption tracking
+    if (answers["Does your company track energy consumption?"] === "No") {
+      advice += "- It is crucial to begin tracking your energy consumption to understand where improvements can be made. Start by installing smart meters that will allow you to monitor energy use in real-time. This will help you identify inefficient energy practices, such as outdated equipment or lighting systems. Begin small by changing light bulbs to LED and powering down equipment when not in use. For larger companies, consider setting up energy management systems to help identify key areas of energy waste. Implementing an energy efficiency program will save costs in the long term and reduce your environmental impact. \n";
+    }
+
     if (answers["What is your primary energy source?"] === "Non-renewable") {
-      advice += "- Switching to renewable energy sources like solar or wind can greatly reduce emissions. \n";
+      advice += "- Transitioning from non-renewable to renewable energy sources is one of the most impactful changes your company can make. Start by researching renewable energy suppliers in your area, or consider installing solar panels or wind turbines if your location and budget allow. Even if you can't make the full transition immediately, you can offset your energy use by purchasing renewable energy credits (RECs). Also, look into government incentives or rebates that support the installation of renewable energy infrastructure. \n";
+    } else if (answers["What is your primary energy source?"] === "Mixed") {
+      advice += "- If your energy source is mixed, aim to gradually increase your reliance on renewable energy. Consider setting a target to shift 10-20% of your energy use to renewable sources within the next year. Additionally, implement energy-saving strategies across the company, such as turning off unused equipment and using programmable thermostats. Track your progress towards energy reduction goals and report it transparently to employees and stakeholders. \n";
     }
 
     if (answers["Do you have a waste management strategy?"] === "No") {
-      advice += "- Develop a waste reduction plan that includes recycling and composting programs. \n";
+      advice += "- Developing a waste management strategy is an essential first step towards sustainability. Start by conducting a waste audit to identify the largest sources of waste in your business. Implement a recycling program for paper, plastics, and metals, and aim to reduce single-use plastic usage across your operations. Establish a system for composting organic waste if possible. For offices, encourage employees to use digital documents instead of printing, and promote a paperless workflow. \n";
+    } else if (answers["Do you have a waste management strategy?"] === "Yes") {
+      advice += "- A well-established waste management strategy can significantly reduce your environmental footprint. Enhance your current program by focusing on zero-waste initiatives, including reducing packaging waste and reusing materials. Start considering circular economy models, where products and materials are reused and recycled within your business. Work with suppliers to ensure packaging materials are recyclable or made from sustainable sources. \n";
     }
 
-    if (answers["Does your company offset its carbon footprint?"] === "No") {
-      advice += "- Explore carbon offset programs to counterbalance emissions. \n";
+    // Water usage
+    if (answers["How does your company reduce water usage?"] === "Not at all") {
+      advice += "- Water conservation should be an immediate priority, especially if your company operates in a water-scarce area. Begin by installing water-efficient fixtures like low-flow toilets, faucets, and showerheads. Consider a rainwater collection system for outdoor irrigation and cleaning purposes. Encourage employees to be mindful of water use in their daily routines. Explore water-efficient technologies to help reduce overall consumption. \n";
+    } else if (answers["How does your company reduce water usage?"] === "Efficient appliances") {
+      advice += "- Using efficient appliances is a great first step! You can further reduce water usage by considering automated water-saving systems. For example, motion sensors can control water usage in bathrooms and kitchens, while smart irrigation systems ensure minimal water use outdoors. Explore water recycling options for industries that use large amounts of water in their production processes. \n";
     }
 
-    if (answers["Do you source materials sustainably?"] === "No") {
-      advice += "- Partner with suppliers who follow ethical and sustainable sourcing practices. \n";
-    }
-
-    // Geographical zone-based recommendations
+    // Geographical Zone Recommendations
     if (answers["Which geographical zone is your company based in?"] === "North America") {
-      advice += "- North America has strong regulations supporting renewable energy. Look into tax credits for renewable energy systems. \n";
+      advice += "- In North America, renewable energy adoption is accelerating. Start by researching local incentives for solar or wind energy projects. Collaborate with local governments to access funding for sustainability projects, such as energy-efficient building upgrades and waste-to-energy systems. Partner with organizations like the U.S. Green Building Council to enhance your energy efficiency and green building practices. \n";
     } else if (answers["Which geographical zone is your company based in?"] === "Europe") {
-      advice += "- Europe is committed to reducing carbon emissions. Consider joining the European Union’s Green Deal initiatives. \n";
-    } else if (answers["Which geographical zone is your company based in?"] === "Asia") {
-      advice += "- Asia is home to many rapidly developing countries. Consider investing in energy-efficient technologies to reduce your carbon footprint. \n";
-    } else if (answers["Which geographical zone is your company based in?"] === "Africa") {
-      advice += "- Africa faces significant challenges with water scarcity. Implement water conservation programs to help your community. \n";
-    } else if (answers["Which geographical zone is your company based in?"] === "South America") {
-      advice += "- South America has rich biodiversity, so consider investing in projects that preserve forests and natural resources. \n";
-    } else if (answers["Which geographical zone is your company based in?"] === "Oceania") {
-      advice += "- Oceania is highly vulnerable to climate change. Look into disaster-resilient infrastructure and energy-efficient technologies. \n";
-    }
-
-    if (answers["Does your company have a corporate sustainability policy?"] === "No") {
-      advice += "- Establishing a corporate sustainability policy will help guide your company's efforts toward environmental responsibility. \n";
-    }
-
-    if (answers["What is your company’s approach to supply chain transparency?"] === "No transparency") {
-      advice += "- Increasing transparency in your supply chain is essential. Use technology to track your suppliers' sustainability practices. \n";
+      advice += "- Europe is one of the leaders in sustainability efforts. Your company can take advantage of the European Union’s Green Deal initiatives to reduce emissions and increase sustainability efforts. Explore opportunities for funding renewable energy projects, carbon offset programs, and green building certifications. Participate in programs like the EU Emissions Trading System to reduce carbon emissions. \n";
     }
 
     setRecommendations(advice);
