@@ -45,20 +45,20 @@ export default function SustainabilitySurvey() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-            <div className="bg-white shadow-md rounded-lg p-6 max-w-lg w-full text-center">
-                <h1 className="text-3xl font-bold text-green-600 mb-4">Sustainability Assessment</h1>
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-blue-500 p-6 text-white">
+            <div className="bg-white shadow-lg rounded-lg p-8 max-w-xl w-full text-center text-gray-900">
+                <h1 className="text-4xl font-extrabold text-green-600 mb-6">Sustainability Assessment</h1>
                 {recommendations ? (
                     <div className="text-lg text-gray-700 text-left whitespace-pre-line">{recommendations}</div>
                 ) : (
                     <div>
-                        <h2 className="text-xl font-semibold text-gray-800">{questions[step].question}</h2>
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">{questions[step].question}</h2>
                         <div className="mt-4 flex flex-wrap justify-center gap-4">
                             {questions[step].options.map((option) => (
                                 <button 
                                     key={option} 
                                     onClick={() => handleAnswer(option)}
-                                    className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg shadow-md transition-all"
+                                    className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg shadow-md transition-all font-semibold"
                                 >
                                     {option}
                                 </button>
@@ -70,3 +70,4 @@ export default function SustainabilitySurvey() {
         </div>
     );
 }
+
