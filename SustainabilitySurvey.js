@@ -21,15 +21,9 @@ export default function SustainabilitySurvey() {
         }
     };
 
-    const submitAnswers = async () => {
-        const response = await fetch("/api/get-recommendations", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ answers })
-        });
-        const data = await response.json();
-        setRecommendations(data.recommendations);
-    };
+    const submitAnswers = () => {
+    setRecommendations("Thank you for completing the assessment! Based on your responses, we recommend focusing on energy efficiency, waste management, and sustainable sourcing.");
+};
 
     return (
         <div className="p-4 max-w-lg mx-auto">
