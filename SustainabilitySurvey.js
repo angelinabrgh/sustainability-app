@@ -9,7 +9,10 @@ export default function SustainabilitySurvey() {
         { question: "What is your company's size?", options: ["Small", "Medium", "Large"] },
         { question: "Does your company track energy consumption?", options: ["Yes", "No"] },
         { question: "What is your primary energy source?", options: ["Renewable", "Non-renewable", "Mixed"] },
-        { question: "Do you have a waste management strategy?", options: ["Yes", "No"] }
+        { question: "Do you have a waste management strategy?", options: ["Yes", "No"] },
+        { question: "How does your company reduce water usage?", options: ["Water recycling", "Efficient appliances", "Not at all"] },
+        { question: "Does your company offset its carbon footprint?", options: ["Yes", "No", "Planning to"] },
+        { question: "Do you source materials sustainably?", options: ["Yes", "No", "Partially"] }
     ];
 
     const handleAnswer = (answer) => {
@@ -22,7 +25,23 @@ export default function SustainabilitySurvey() {
     };
 
     const submitAnswers = () => {
-        setRecommendations("✅ Thank you for completing the assessment! 🌱 Based on your responses, we recommend focusing on energy efficiency, waste management, and sustainable sourcing.");
+        let advice = "✅ Thank you for completing the assessment! 🌱 Here are some tailored sustainability recommendations based on your responses: \n";
+        if (answers["Does your company track energy consumption?"] === "No") {
+            advice += "- Consider implementing an energy monitoring system to track consumption. \n";
+        }
+        if (answers["What is your primary energy source?"] === "Non-renewable") {
+            advice += "- Switching to renewable energy sources like solar or wind can greatly reduce emissions. \n";
+        }
+        if (answers["Do you have a waste management strategy?"] === "No") {
+            advice += "- Develop a waste reduction plan that includes recycling and composting programs. \n";
+        }
+        if (answers["Does your company offset its carbon footprint?"] === "No") {
+            advice += "- Explore carbon offset programs to counterbalance emissions. \n";
+        }
+        if (answers["Do you source materials sustainably?"] === "No") {
+            advice += "- Partner with suppliers who follow ethical and sustainable sourcing practices. \n";
+        }
+        setRecommendations(advice);
     };
 
     return (
@@ -30,13 +49,11 @@ export default function SustainabilitySurvey() {
             <div className="bg-white shadow-md rounded-lg p-6 max-w-lg w-full text-center">
                 <h1 className="text-3xl font-bold text-green-600 mb-4">Sustainability Assessment</h1>
                 {recommendations ? (
-                    <div className="text-lg text-gray-700">
-                        <p>{recommendations}</p>
-                    </div>
+                    <div className="text-lg text-gray-700 text-left whitespace-pre-line">{recommendations}</div>
                 ) : (
                     <div>
                         <h2 className="text-xl font-semibold text-gray-800">{questions[step].question}</h2>
-                        <div className="mt-4 flex justify-center gap-4">
+                        <div className="mt-4 flex flex-wrap justify-center gap-4">
                             {questions[step].options.map((option) => (
                                 <button 
                                     key={option} 
