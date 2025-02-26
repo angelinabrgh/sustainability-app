@@ -77,17 +77,20 @@ export default function SustainabilitySurvey() {
         - **Action**: Install energy-efficient LED lighting and ensure that all equipment is turned off after hours.
         - **Action**: Start tracking your energy consumption via monthly electricity bills to monitor progress.
         - **Milestone**: Achieve a 5% reduction in energy usage within the first 3 months.
-
+        - **Financial Benefit**: Reduced energy consumption can save you around 10-15% annually on your utility bills, reinvesting this money into further sustainability efforts.
+        
       - **Waste Reduction:**
         - **Goal**: Cut waste by 50% within 6 months.
         - **Action**: Start a recycling program for paper, cardboard, and plastic.
         - **Action**: Reduce office printing by 70% by transitioning to digital documents.
         - **Milestone**: Achieve a 25% reduction in paper waste within the first 3 months.
-        
+        - **Financial Benefit**: Waste management costs can be reduced by 20-30%, freeing up funds to further enhance business operations.
+
       - **Employee Engagement:**
         - **Goal**: Increase employee participation in sustainability by 30%.
         - **Action**: Launch a monthly "green challenge" with incentives for sustainable behaviors (e.g., turning off lights, reducing paper use).
         - **Milestone**: Engage at least 50% of employees in the first 6 months.
+        - **Profit Opportunity**: Engaged employees are more productive and loyal. This boosts overall company culture and can reduce turnover by up to 15%, saving you recruitment and training costs.
       `;
     } else if (answers["What is your company's size?"] === "Medium") {
       advice += `
@@ -96,18 +99,21 @@ export default function SustainabilitySurvey() {
         - **Goal**: Reduce energy consumption by 20% in 18 months.
         - **Action**: Upgrade to energy-efficient HVAC systems and automate lighting controls in offices.
         - **Milestone**: Install energy-efficient systems in 30% of your office spaces within the first 6 months.
-        
+        - **Financial Benefit**: Energy-efficient HVAC systems can reduce your heating and cooling costs by up to 30%, translating to significant savings.
+
       - **Water Conservation:**
         - **Goal**: Reduce water consumption by 25% over the next year.
         - **Action**: Install water-saving fixtures such as low-flow toilets and faucets.
         - **Action**: Introduce a water monitoring system to track consumption and identify wasteful areas.
         - **Milestone**: Achieve a 10% reduction in water use by the first 6 months.
+        - **Financial Benefit**: Reducing water consumption can lead to lower utility bills, saving between 10-15% annually.
 
       - **Waste Management:**
         - **Goal**: Reach 75% recycling by the end of the year.
         - **Action**: Partner with a local recycling company to handle all recyclable materials.
         - **Action**: Introduce composting in your office kitchens for food waste.
         - **Milestone**: Introduce a composting program within 3 months, aiming for a 30% reduction in landfill waste.
+        - **Profit Opportunity**: Companies with strong waste diversion practices can qualify for green certifications, enhancing brand reputation and opening doors to eco-conscious consumers.
       `;
     } else if (answers["What is your company's size?"] === "Large") {
       advice += `
@@ -116,17 +122,20 @@ export default function SustainabilitySurvey() {
         - **Goal**: Achieve a 50% reduction in carbon emissions by 2025.
         - **Action**: Transition 50% of your energy use to solar or wind power within 3 years.
         - **Milestone**: Begin with 20% renewable energy usage within the first year, and scale up by 10% annually.
-        
+        - **Financial Benefit**: Investing in renewable energy can cut energy costs by 30%, and can qualify your business for tax incentives or subsidies.
+
       - **Carbon Neutrality:**
         - **Goal**: Achieve carbon neutrality by 2030.
         - **Action**: Invest in large-scale renewable energy projects and carbon offset programs.
         - **Action**: Set up a carbon management team to oversee your emissions and ensure continuous improvement.
         - **Milestone**: Offset 10% of your carbon emissions in the first year through tree planting and renewable energy credits.
+        - **Profit Opportunity**: Carbon neutrality can lead to access to global markets, as many countries and clients are demanding sustainable practices, opening the door to new revenue streams.
 
       - **Sustainability Policy:**
         - **Goal**: Integrate sustainability at the core of your operations by 2025.
         - **Action**: Publish a corporate sustainability report every year that highlights your efforts and progress.
         - **Milestone**: Achieve 100% supply chain sustainability transparency by 2024.
+        - **Financial Benefit**: Being able to showcase a comprehensive sustainability policy will increase your appeal to environmentally-conscious consumers and investors.
       `;
     }
 
@@ -138,62 +147,12 @@ export default function SustainabilitySurvey() {
       - **Action**: Install smart meters across all company facilities to monitor real-time energy use.
       - **Action**: Begin by setting a target to reduce energy consumption by 10% within 6 months.
       - **Milestone**: Reduce energy consumption by 5% within the first 3 months.
-
-      - **Action**: Implement a monthly energy usage report that helps identify areas for improvement.
+      - **Financial Benefit**: Real-time energy monitoring allows you to immediately identify areas of inefficiency, enabling faster savings and more effective cost-cutting strategies.
       `;
     }
 
     // **Carbon Footprint**
     if (answers["Does your company offset its carbon footprint?"] === "No") {
       advice += `
-      **Recommendations for Carbon Offset:**
-      - **Goal**: Offset 10% of your company’s carbon footprint within the next 12 months.
-      - **Action**: Start by investing in carbon credits through certified programs.
-      - **Action**: Plant trees in areas that need reforestation, aiming to offset at least 5% of your total emissions within the first year.
-      - **Milestone**: Offset 5% of emissions by year-end.
-      `;
-    }
+      **Recommendations for
 
-    // **Geographical Zone-Specific Recommendations**
-    if (answers["Which geographical zone is your company based in?"] === "North America") {
-      advice += `
-      **Recommendations for North America:**
-      - **Goal**: Transition 30% of your operations to renewable energy sources within the next 2 years.
-      - **Action**: Research tax credits for solar energy installations, and aim to install solar panels on your facilities by 2024.
-      - **Action**: Implement electric vehicle (EV) charging stations at your office locations to encourage sustainable commuting.
-      - **Milestone**: Achieve 30% renewable energy usage by 2025.
-      `;
-    }
-
-    setRecommendations(advice);
-  };
-
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-6 text-white">
-      <div className="bg-white shadow-xl rounded-lg p-10 max-w-3xl w-full text-center text-gray-900">
-        <h1 className="text-4xl font-extrabold text-green-600 mb-6">Sustainability Assessment</h1>
-        
-        {recommendations ? (
-          <div className="text-lg text-gray-700 text-left whitespace-pre-line">
-            {recommendations}
-          </div>
-        ) : (
-          <div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">{questions[step].question}</h2>
-            <div className="mt-6 flex flex-wrap justify-center gap-6">
-              {questions[step].options.map((option) => (
-                <button 
-                  key={option} 
-                  onClick={() => handleAnswer(option)}
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg shadow-md transition-all duration-300 ease-in-out font-semibold transform hover:scale-105"
-                >
-                  {option}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
