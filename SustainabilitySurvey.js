@@ -22,29 +22,34 @@ export default function SustainabilitySurvey() {
     };
 
     const submitAnswers = () => {
-    setRecommendations("Thank you for completing the assessment! Based on your responses, we recommend focusing on energy efficiency, waste management, and sustainable sourcing.");
-};
+        setRecommendations("✅ Thank you for completing the assessment! 🌱 Based on your responses, we recommend focusing on energy efficiency, waste management, and sustainable sourcing.");
+    };
 
     return (
-        <div className="p-4 max-w-lg mx-auto">
-            <h1 className="text-2xl font-bold text-center mb-4">Sustainability Assessment</h1>
-            {recommendations ? (
-                <div>
-                    <h2 className="text-xl font-bold">Sustainability Recommendations</h2>
-                    <p className="mt-2">{recommendations}</p>
-                </div>
-            ) : (
-                <div>
-                    <h2 className="text-lg font-semibold">{questions[step].question}</h2>
-                    <div className="mt-4 flex flex-col gap-2">
-                        {questions[step].options.map((option) => (
-                            <button key={option} onClick={() => handleAnswer(option)} className="bg-blue-500 text-white px-4 py-2 rounded">
-                                {option}
-                            </button>
-                        ))}
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+            <div className="bg-white shadow-md rounded-lg p-6 max-w-lg w-full text-center">
+                <h1 className="text-3xl font-bold text-green-600 mb-4">Sustainability Assessment</h1>
+                {recommendations ? (
+                    <div className="text-lg text-gray-700">
+                        <p>{recommendations}</p>
                     </div>
-                </div>
-            )}
+                ) : (
+                    <div>
+                        <h2 className="text-xl font-semibold text-gray-800">{questions[step].question}</h2>
+                        <div className="mt-4 flex justify-center gap-4">
+                            {questions[step].options.map((option) => (
+                                <button 
+                                    key={option} 
+                                    onClick={() => handleAnswer(option)}
+                                    className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg shadow-md transition-all"
+                                >
+                                    {option}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }
