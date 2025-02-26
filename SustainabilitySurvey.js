@@ -68,33 +68,65 @@ export default function SustainabilitySurvey() {
   const submitAnswers = () => {
     let advice = "✅ Thank you for completing the assessment! 🌱 Here are some tailored sustainability recommendations based on your responses:\n\n";
 
-    // **Company Size** - Focus on Practical, Actionable Goals
+    // **Company Size** - Actionable Steps for Each Size
     if (answers["What is your company's size?"] === "Small") {
       advice += `
       **Recommendations for Small Companies:**
-      - **Goal**: Reduce energy consumption by 15% within 12 months by upgrading to LED lighting and scheduling monthly energy audits.
-      - **Action**: Start with a 10% reduction in electricity bills by reducing equipment usage after hours. Measure success using monthly utility bills.
-      - **Action**: Encourage employee participation by offering incentives for energy-saving initiatives. Track progress by measuring energy use per employee.
-      - **Action**: Conduct simple employee workshops to raise awareness about energy-saving and sustainability practices.
-      - **Timeframe**: 12 months for a 15% reduction in energy consumption.
+      - **Energy Reduction:**
+        - **Goal**: Achieve a 15% reduction in energy consumption over 12 months.
+        - **Action**: Install energy-efficient LED lighting and ensure that all equipment is turned off after hours.
+        - **Action**: Start tracking your energy consumption via monthly electricity bills to monitor progress.
+        - **Milestone**: Achieve a 5% reduction in energy usage within the first 3 months.
+
+      - **Waste Reduction:**
+        - **Goal**: Cut waste by 50% within 6 months.
+        - **Action**: Start a recycling program for paper, cardboard, and plastic.
+        - **Action**: Reduce office printing by 70% by transitioning to digital documents.
+        - **Milestone**: Achieve a 25% reduction in paper waste within the first 3 months.
+        
+      - **Employee Engagement:**
+        - **Goal**: Increase employee participation in sustainability by 30%.
+        - **Action**: Launch a monthly "green challenge" with incentives for sustainable behaviors (e.g., turning off lights, reducing paper use).
+        - **Milestone**: Engage at least 50% of employees in the first 6 months.
       `;
     } else if (answers["What is your company's size?"] === "Medium") {
       advice += `
       **Recommendations for Medium-Sized Companies:**
-      - **Goal**: Reduce overall energy consumption by 20% in 18 months.
-      - **Action**: Implement energy-efficient HVAC systems and upgrade insulation to reduce heating/cooling costs.
-      - **Action**: Install energy-saving appliances and automate lighting controls in office spaces.
-      - **Action**: Implement a system for monitoring energy consumption using smart meters, aiming for a 20% reduction within 18 months.
-      - **Timeframe**: 18 months for a 20% reduction in energy consumption.
+      - **Energy Efficiency:**
+        - **Goal**: Reduce energy consumption by 20% in 18 months.
+        - **Action**: Upgrade to energy-efficient HVAC systems and automate lighting controls in offices.
+        - **Milestone**: Install energy-efficient systems in 30% of your office spaces within the first 6 months.
+        
+      - **Water Conservation:**
+        - **Goal**: Reduce water consumption by 25% over the next year.
+        - **Action**: Install water-saving fixtures such as low-flow toilets and faucets.
+        - **Action**: Introduce a water monitoring system to track consumption and identify wasteful areas.
+        - **Milestone**: Achieve a 10% reduction in water use by the first 6 months.
+
+      - **Waste Management:**
+        - **Goal**: Reach 75% recycling by the end of the year.
+        - **Action**: Partner with a local recycling company to handle all recyclable materials.
+        - **Action**: Introduce composting in your office kitchens for food waste.
+        - **Milestone**: Introduce a composting program within 3 months, aiming for a 30% reduction in landfill waste.
       `;
     } else if (answers["What is your company's size?"] === "Large") {
       advice += `
       **Recommendations for Large Companies:**
-      - **Goal**: Achieve a 50% reduction in carbon emissions by 2025.
-      - **Action**: Invest in large-scale renewable energy projects, such as solar panel installations on office buildings or switching to wind energy for operations.
-      - **Action**: Transition your entire fleet to electric vehicles by 2027 and achieve carbon neutrality by 2030.
-      - **Action**: Track emissions using carbon footprint tools and ensure all branches and offices follow the same sustainability measures.
-      - **Timeframe**: 50% reduction in carbon emissions by 2025.
+      - **Energy Sustainability:**
+        - **Goal**: Achieve a 50% reduction in carbon emissions by 2025.
+        - **Action**: Transition 50% of your energy use to solar or wind power within 3 years.
+        - **Milestone**: Begin with 20% renewable energy usage within the first year, and scale up by 10% annually.
+        
+      - **Carbon Neutrality:**
+        - **Goal**: Achieve carbon neutrality by 2030.
+        - **Action**: Invest in large-scale renewable energy projects and carbon offset programs.
+        - **Action**: Set up a carbon management team to oversee your emissions and ensure continuous improvement.
+        - **Milestone**: Offset 10% of your carbon emissions in the first year through tree planting and renewable energy credits.
+
+      - **Sustainability Policy:**
+        - **Goal**: Integrate sustainability at the core of your operations by 2025.
+        - **Action**: Publish a corporate sustainability report every year that highlights your efforts and progress.
+        - **Milestone**: Achieve 100% supply chain sustainability transparency by 2024.
       `;
     }
 
@@ -102,53 +134,12 @@ export default function SustainabilitySurvey() {
     if (answers["Does your company track energy consumption?"] === "No") {
       advice += `
       **Recommendations for Energy Consumption Tracking:**
-      - **Goal**: Start tracking energy consumption within the next month.
+      - **Goal**: Start tracking energy consumption within the next 1 month.
       - **Action**: Install smart meters across all company facilities to monitor real-time energy use.
-      - **Action**: Set a target to reduce energy use by 10% within 6 months.
-      - **Action**: Create a monthly report to monitor progress and identify energy-intensive processes.
-      - **Timeframe**: Begin tracking within 1 month, aim for 10% reduction in 6 months.
-      `;
-    }
+      - **Action**: Begin by setting a target to reduce energy consumption by 10% within 6 months.
+      - **Milestone**: Reduce energy consumption by 5% within the first 3 months.
 
-    // **Primary Energy Source**
-    if (answers["What is your primary energy source?"] === "Non-renewable") {
-      advice += `
-      **Recommendations for Transitioning to Renewable Energy:**
-      - **Goal**: Transition 20% of energy use to renewable sources within 12 months.
-      - **Action**: Start with a purchase of renewable energy credits (RECs) to offset 20% of your energy usage.
-      - **Action**: Research installation options for solar or wind energy systems at your headquarters or manufacturing facility.
-      - **Action**: Partner with a renewable energy supplier to shift 20% of your power source to green energy.
-      - **Timeframe**: Achieve 20% renewable energy usage within 12 months.
-      `;
-    }
-
-    // **Waste Management**
-    if (answers["Do you have a waste management strategy?"] === "No") {
-      advice += `
-      **Recommendations for Waste Management Strategy:**
-      - **Goal**: Develop and implement a waste management strategy within the next 6 months.
-      - **Action**: Start with basic paper recycling and ensure that all employees use designated bins for recycling paper, plastic, and metals.
-      - **Action**: Partner with a certified waste management company to track waste types and optimize for recycling.
-      - **Timeframe**: 6 months for a full waste management implementation.
-      `;
-    } else if (answers["Do you have a waste management strategy?"] === "Yes") {
-      advice += `
-      **Recommendations for Optimizing Waste Management:**
-      - **Goal**: Achieve 100% recycling and composting in the next 12 months.
-      - **Action**: Implement a company-wide composting initiative for organic waste and ensure employees have access to compost bins.
-      - **Action**: Introduce a zero-waste policy for office events, eliminating single-use plastics and disposable cutlery.
-      - **Timeframe**: Achieve 100% recycling and composting within 12 months.
-      `;
-    }
-
-    // **Water Usage**
-    if (answers["How does your company reduce water usage?"] === "Not at all") {
-      advice += `
-      **Recommendations for Water Conservation:**
-      - **Goal**: Reduce water usage by 20% in the next 6 months.
-      - **Action**: Install water-saving devices such as low-flow faucets, low-flow toilets, and motion-sensor taps in all company facilities.
-      - **Action**: Introduce a policy for employees to use water responsibly and track water usage monthly.
-      - **Timeframe**: Achieve 20% reduction within 6 months.
+      - **Action**: Implement a monthly energy usage report that helps identify areas for improvement.
       `;
     }
 
@@ -156,21 +147,10 @@ export default function SustainabilitySurvey() {
     if (answers["Does your company offset its carbon footprint?"] === "No") {
       advice += `
       **Recommendations for Carbon Offset:**
-      - **Goal**: Begin offsetting 10% of your carbon footprint by investing in certified carbon offset programs.
-      - **Action**: Research certified carbon offset programs such as tree planting or renewable energy projects.
-      - **Action**: Commit to purchasing carbon credits or investing in local environmental programs to offset your emissions.
-      - **Timeframe**: Offset 10% of emissions within 12 months.
-      `;
-    }
-
-    // **Supply Chain Transparency**
-    if (answers["What is your company’s approach to supply chain transparency?"] === "No transparency") {
-      advice += `
-      **Recommendations for Supply Chain Transparency:**
-      - **Goal**: Achieve full transparency within the next 12 months.
-      - **Action**: Work with suppliers to identify their sustainability practices and audit the supply chain.
-      - **Action**: Publish a sustainability report detailing supply chain sourcing and any environmental concerns.
-      - **Timeframe**: Full transparency within 12 months.
+      - **Goal**: Offset 10% of your company’s carbon footprint within the next 12 months.
+      - **Action**: Start by investing in carbon credits through certified programs.
+      - **Action**: Plant trees in areas that need reforestation, aiming to offset at least 5% of your total emissions within the first year.
+      - **Milestone**: Offset 5% of emissions by year-end.
       `;
     }
 
@@ -178,10 +158,10 @@ export default function SustainabilitySurvey() {
     if (answers["Which geographical zone is your company based in?"] === "North America") {
       advice += `
       **Recommendations for North America:**
-      - **Goal**: Transition 30% of your operations to renewable energy sources in the next 2 years.
-      - **Action**: Start by purchasing renewable energy certificates (RECs) for 15% of your energy needs.
-      - **Action**: Explore tax credits available for solar energy installations.
-      - **Timeframe**: Achieve 30% renewable energy usage within 24 months.
+      - **Goal**: Transition 30% of your operations to renewable energy sources within the next 2 years.
+      - **Action**: Research tax credits for solar energy installations, and aim to install solar panels on your facilities by 2024.
+      - **Action**: Implement electric vehicle (EV) charging stations at your office locations to encourage sustainable commuting.
+      - **Milestone**: Achieve 30% renewable energy usage by 2025.
       `;
     }
 
