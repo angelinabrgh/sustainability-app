@@ -31,8 +31,8 @@ export default function SustainabilitySurvey() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-green-50 bg-opacity-90 px-6 py-12">
       
-      {/* Survey Container */}
-      <div className="bg-white shadow-2xl rounded-2xl p-8 max-w-lg w-full text-center">
+      {/* Survey Container - Centered Box */}
+      <div className="bg-white shadow-2xl rounded-3xl p-8 max-w-xl w-full text-center">
         
         {/* Title */}
         <h1 className="text-4xl font-extrabold text-green-700 mb-6 tracking-wide">
@@ -40,43 +40,7 @@ export default function SustainabilitySurvey() {
         </h1>
 
         {/* Progress Bar */}
-        <div className="w-full bg-gray-200 h-3 rounded-full overflow-hidden mb-6">
+        <div className="w-full bg-gray-200 h-4 rounded-full overflow-hidden mb-6">
           <div 
-            className="bg-green-500 h-full transition-all duration-300" 
-            style={{ width: `${((step + 1) / questions.length) * 100}%` }} 
-          />
-        </div>
-
-        {/* Survey Question */}
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">
-          {questions[step].question}
-        </h2>
-
-        {/* Options */}
-        <div className="flex flex-col space-y-3">
-          {questions[step].options.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleAnswer(option)}
-              className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-transform transform hover:scale-105 shadow-md"
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-
-        {/* Progress Indicator */}
-        <p className="text-gray-600 mt-4">Question {step + 1} of {questions.length}</p>
-      </div>
-
-      {/* Recommendations Section */}
-      {recommendations && (
-        <div className="mt-8 bg-white p-6 rounded-2xl shadow-2xl max-w-lg w-full text-center">
-          <h3 className="text-green-700 font-bold text-2xl mb-2">Your Results</h3>
-          <p className="text-gray-700">{recommendations}</p>
-        </div>
-      )}
-    </div>
-  );
-}
+            className
 
