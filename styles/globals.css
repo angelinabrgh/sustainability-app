@@ -5,3 +5,9 @@
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, #d4edda, #a3e635);
 }
+body {
+  background-image: url('/path-to-nature-image.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
