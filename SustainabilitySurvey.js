@@ -42,5 +42,40 @@ export default function SustainabilitySurvey() {
         {/* Progress Bar */}
         <div className="w-full bg-gray-200 h-4 rounded-full overflow-hidden mb-6">
           <div 
-            className
+            className="bg-green-500 h-full transition-all duration-300" 
+            style={{ width: `${((step + 1) / questions.length) * 100}%` }} 
+          />
+        </div>
 
+        {/* Survey Question */}
+        <h2 className="text-xl font-semibold text-gray-800 mb-6 leading-relaxed">
+          {questions[step].question}
+        </h2>
+
+        {/* Options */}
+        <div className="flex flex-col space-y-4">
+          {questions[step].options.map((option, index) => (
+            <button
+              key={index}
+              onClick={() => handleAnswer(option)}
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition-transform transform hover:scale-105 shadow-lg text-lg"
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+
+        {/* Progress Indicator */}
+        <p className="text-gray-600 mt-4 text-sm">Question {step + 1} of {questions.length}</p>
+      </div>
+
+      {/* Recommendations Section */}
+      {recommendations && (
+        <div className="mt-8 bg-white p-6 rounded-3xl shadow-2xl max-w-xl w-full text-center">
+          <h3 className="text-green-700 font-bold text-2xl mb-2">Your Results</h3>
+          <p className="text-gray-700 text-lg">{recommendations}</p>
+        </div>
+      )}
+    </div>
+  );
+}
