@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-gradient-to-br {
-  background-image: linear-gradient(to bottom right, #d4edda, #a3e635);
-}
+/* Background Styling */
 body {
-  background-image: url('/path-to-your-image.jpg'); /* Replace with your real image */
+  background: linear-gradient(to bottom right, #d4edda, #a3e635),
+              url('/path-to-your-image.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
