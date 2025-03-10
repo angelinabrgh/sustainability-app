@@ -29,7 +29,7 @@ export default function SustainabilitySurvey() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-200 via-green-300 to-green-400 px-6 py-12">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-green-50 bg-opacity-90 px-6 py-12">
       
       {/* Survey Container */}
       <div className="bg-white shadow-2xl rounded-2xl p-8 max-w-lg w-full text-center">
@@ -38,6 +38,14 @@ export default function SustainabilitySurvey() {
         <h1 className="text-4xl font-extrabold text-green-700 mb-6 tracking-wide">
           🌍 Sustainability Survey
         </h1>
+
+        {/* Progress Bar */}
+        <div className="w-full bg-gray-200 h-3 rounded-full overflow-hidden mb-6">
+          <div 
+            className="bg-green-500 h-full transition-all duration-300" 
+            style={{ width: `${((step + 1) / questions.length) * 100}%` }} 
+          />
+        </div>
 
         {/* Survey Question */}
         <h2 className="text-xl font-semibold text-gray-800 mb-4">
@@ -71,3 +79,4 @@ export default function SustainabilitySurvey() {
     </div>
   );
 }
+
