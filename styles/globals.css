@@ -4,8 +4,7 @@
 
 /* Background Styling */
 body {
-  background: linear-gradient(to bottom right, #d4edda, #a3e635),
-              url('/path-to-your-image.jpg');
+  background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=1920&q=80');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
