@@ -9,12 +9,6 @@ export default function SustainabilitySurvey() {
     { question: "What is your company's size?", options: ["Small", "Medium", "Large"] },
     { question: "What industry is your company in?", options: ["Manufacturing", "Retail", "Technology", "Other"] },
     { question: "Where is your company located?", options: ["North America", "Europe", "Asia", "Other"] },
-    { question: "Does your company track energy consumption?", options: ["Yes", "No"] },
-    { question: "What is your primary energy source?", options: ["Renewable", "Non-renewable", "Mixed"] },
-    { question: "Do you have a waste management strategy?", options: ["Yes", "No"] },
-    { question: "How does your company reduce water usage?", options: ["Water recycling", "Efficient appliances", "Not at all"] },
-    { question: "Does your company offset its carbon footprint?", options: ["Yes", "No", "Planning to"] },
-    { question: "Do you source materials sustainably?", options: ["Yes", "No", "Partially"] },
     { question: "Does your company have a sustainability officer or committee?", options: ["Yes", "No"] },
     { question: "Does your company design products with recyclability in mind?", options: ["Yes", "No"] },
     { question: "Do you offer a take-back or recycling program for your products?", options: ["Yes", "No"] },
@@ -33,16 +27,16 @@ export default function SustainabilitySurvey() {
       No: "Consider forming a committee or appointing an officer to integrate sustainability into business operations."
     },
     "Does your company design products with recyclability in mind?": {
-      Yes: "AI-driven designs, modular products, and QR codes for recycling tracking can improve sustainability.",
+      Yes: "Use AI-driven designs, modular products, and QR codes for tracking recyclability.",
       No: "Switch to sustainable materials, biodegradable packaging, and extend product lifespans."
     },
     "Do you offer a take-back or recycling program for your products?": {
       Yes: "Enhance return processes with drop-off points, customer incentives, and better sorting technologies.",
-      No: "Consider collaborating with recyclers and implementing a return program for product lifecycle extension."
+      No: "Collaborate with recyclers and implement a return program for product lifecycle extension."
     },
     "Are you ready to invest in sustainability?": {
       Yes: "Assess ESG status, invest in energy-efficient upgrades, and explore sustainable financing options.",
-      No: "Implement small changes like LED lights, digital invoices, and regulatory alignments for gradual sustainability adoption."
+      No: "Start small with LED lights, digital invoices, and regulatory alignments for gradual sustainability adoption."
     },
     "Do you think sustainability is key for business success?": {
       Yes: "Sustainability reduces costs, improves brand reputation, and aligns with customer expectations.",
@@ -82,18 +76,7 @@ export default function SustainabilitySurvey() {
   };
 
   return (
-    <div 
-  <div className="min-h-screen flex flex-col items-center justify-center bg-nature bg-cover bg-center bg-fixed px-6 py-12">
-  style={{
-    backgroundImage: "url('https://cdn.pixabay.com/photo/2016/11/29/04/17/sunrise-1865138_1920.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundAttachment: "fixed",
-    width: "100%",
-    height: "100vh"
-  }}
->
-
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-6 py-12">
       {!showReport ? (
         <div className="bg-white shadow-2xl rounded-3xl p-8 max-w-xl w-full text-center">
           <h1 className="text-4xl font-extrabold text-green-700 mb-6">🌍 Sustainability Survey</h1>
@@ -108,7 +91,7 @@ export default function SustainabilitySurvey() {
         </div>
       ) : (
         <div className="bg-white p-6 rounded-3xl shadow-2xl max-w-xl w-full text-center">
-          <h3 className="text-green-700 font-bold text-2xl mb-2">Your Sustainability Report</h3>
+          <h3 className="text-green-700 font-bold text-2xl mb-4">Your Sustainability Report</h3>
           {Object.keys(answers).map((question, index) => (
             <div key={index} className="text-left my-4">
               <h4 className="font-semibold text-gray-800">{question}</h4>
@@ -118,6 +101,10 @@ export default function SustainabilitySurvey() {
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
     </div>
   );
 }
