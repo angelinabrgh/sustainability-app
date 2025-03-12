@@ -57,13 +57,10 @@ export default function SustainabilitySurvey() {
     }
   };
 
-  const handleAnswer = (answer) => {
-    setAnswers({ ...answers, [questions[step].question]: answer });
-    if (step < questions.length - 1) {
-      setStep(step + 1);
-    } else {
-      setShowReport(true);
-    }
+  const generateReport = () => {
+    return Object.keys(answers).map(question => {
+      return responses[question]?.[answers[question]] || "";
+    }).join(" ");
   };
 
   return (
@@ -83,7 +80,7 @@ export default function SustainabilitySurvey() {
       ) : (
         <div className="bg-white p-6 rounded-3xl shadow-2xl max-w-xl w-full text-left">
           <h3 className="text-green-700 font-bold text-2xl mb-4">Your Finished Short Report</h3>
-          <p className="text-gray-700">{Object.keys(answers).map(question => responses[question]?.[answers[question]] || "").join(" ")}</p>
+          <p className="text-gray-700">{generateReport()}</p>
           <p className="text-gray-800 mt-4">If you are interested in a longer, more detailed report and our consulting service, please contact us.</p>
         </div>
       )}
