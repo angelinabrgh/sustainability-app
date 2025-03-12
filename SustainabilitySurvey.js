@@ -84,8 +84,16 @@ export default function SustainabilitySurvey() {
   return (
     <div 
   className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center bg-fixed px-6 py-12"
-  style={{ backgroundImage: "url('https://cdn.pixabay.com/photo/2016/11/29/04/17/sunrise-1865138_1920.jpg')" }}
+  style={{
+    backgroundImage: "url('https://cdn.pixabay.com/photo/2016/11/29/04/17/sunrise-1865138_1920.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
+    width: "100%",
+    height: "100vh"
+  }}
 >
+
       {!showReport ? (
         <div className="bg-white shadow-2xl rounded-3xl p-8 max-w-xl w-full text-center">
           <h1 className="text-4xl font-extrabold text-green-700 mb-6">🌍 Sustainability Survey</h1>
