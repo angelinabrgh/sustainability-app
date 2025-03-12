@@ -40,7 +40,7 @@ export default function SustainabilitySurvey() {
 
   const generateReport = () => {
     return Object.keys(answers).map(question => {
-      return responses[question]?.[answers[question]] || "";
+      return `${question}: ${answers[question]}. ${responses[question]?.[answers[question]] || ""}`;
     }).join(" ");
   };
 
