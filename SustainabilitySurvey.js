@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import backgroundImage from "../styles/assets/Sustainify.png";
+
 
 export default function SustainabilitySurvey() {
   const [step, setStep] = useState(0);
@@ -136,7 +138,15 @@ export default function SustainabilitySurvey() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-6 py-12">
+   <div
+  className="min-h-screen flex flex-col items-center justify-center px-6 py-12"
+  style={{
+    backgroundImage: "url('../styles/assets/Sustainify.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat"
+  }}
+>
       {!showReport ? (
         <div className="bg-white shadow-2xl rounded-3xl p-8 max-w-xl w-full text-center">
           <h1 className="text-4xl font-extrabold text-green-700 mb-6">🌍 Sustainability Survey</h1>
