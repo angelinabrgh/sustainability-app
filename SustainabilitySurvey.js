@@ -6,54 +6,79 @@ export default function SustainabilitySurvey() {
   const [showReport, setShowReport] = useState(false);
 
   const questions = [
-    { question: "What is your company's size?", options: ["Small", "Medium", "Large"] },
-    { question: "What industry is your company in?", options: ["Manufacturing", "Retail", "Technology", "Other"] },
-    { question: "Where is your company located?", options: ["North America", "Europe", "Asia", "Other"] },
-    { question: "Does your company have a sustainability officer or committee?", options: ["Yes", "No"] },
-    { question: "Does your company design products with recyclability in mind?", options: ["Yes", "No"] },
-    { question: "Do you offer a take-back or recycling program for your products?", options: ["Yes", "No"] },
-    { question: "Are you ready to invest in sustainability?", options: ["Yes", "No"] },
-    { question: "Do you think sustainability is key for business success?", options: ["Yes", "No"] },
-    { question: "Does your company provide sustainability training for employees?", options: ["Yes", "No"] },
-    { question: "Has your company implemented measures to reduce carbon emissions?", options: ["Electric vehicles", "Carbon credits", "Remote work", "None", "Other"] },
-    { question: "Does your company track its carbon footprint?", options: ["Yes", "No"] },
-    { question: "What steps has your company taken to reduce water consumption?", options: ["Low-flow fixtures", "Water recycling", "Employee awareness", "None", "Other"] },
-    { question: "Does your company monitor water usage?", options: ["Yes", "No"] }
+    { question: "Size of the Company", options: ["Small", "Medium", "Large"] },
+    { question: "Industry", options: ["Manufacturing", "Retail", "Technology", "Hospitality", "Transportation", "Health", "Other"] },
+    { question: "Geographical Zone", options: ["North America", "Europe", "Asia", "Africa", "South America", "Oceania"] },
+    { question: "Energy Consumption & Efficiency", options: ["Does not monitor", "Uses renewable energy", "Uses non-renewable energy", "Uses a mix"] },
+    { question: "Waste Management", options: ["No waste reduction strategy", "Disposes in landfills", "Recycles", "Composts"] },
+    { question: "Supplier Sustainability", options: ["Yes", "No"] },
+    { question: "Prioritizing Local Suppliers", options: ["Yes", "No"] },
+    { question: "Carbon Footprint Tracking", options: ["Yes", "No"] },
+    { question: "Measures to Reduce Carbon Emissions", options: ["Electric vehicles", "Carbon credits", "Remote work policies", "None", "Other"] },
+    { question: "Monitoring Water Usage", options: ["Yes", "No"] },
+    { question: "Steps to Reduce Water Consumption", options: ["Low-flow fixtures", "Water recycling systems", "Employee awareness programs", "None", "Other"] },
+    { question: "Sustainability Training for Employees", options: ["Yes", "No"] },
+    { question: "Sustainability Officer or Committee", options: ["Yes", "No"] },
+    { question: "Product Lifecycle & Circular Economy", options: ["Yes", "No"] },
+    { question: "Take-back or Recycling Program", options: ["Yes", "No"] },
+    { question: "Investment in Sustainability", options: ["Yes", "No"] },
+    { question: "Sustainability as a Key Business Aspect", options: ["Yes", "No"] }
   ];
 
   const responses = {
-    "What is your company's size?": {
-      Small: "As a small company, focusing on low-cost sustainability initiatives such as energy efficiency, remote work policies, and minimizing paper use can be beneficial.",
-      Medium: "Being a medium-sized company, implementing formal sustainability policies, conducting energy audits, and engaging employees in green initiatives can strengthen your environmental impact.",
-      Large: "As a large company, developing a company-wide sustainability strategy, setting measurable goals, and investing in renewable energy can drive significant change."
+    "Supplier Sustainability": {
+      "Yes": "Expanding sustainability criteria in procurement ensures ongoing environmental responsibility.",
+      "No": "Requesting sustainability policies from suppliers is an easy first step."
     },
-    "What industry is your company in?": {
-      Manufacturing: "Your company operates in manufacturing, where improving energy efficiency, sourcing sustainable raw materials, and reducing industrial waste are key strategies.",
-      Retail: "In the retail sector, optimizing supply chain sustainability, reducing packaging waste, and promoting recycling programs for customers can enhance your environmental impact.",
-      Technology: "For technology companies, reducing electronic waste, optimizing energy-efficient data centers, and promoting remote work can be effective sustainability measures.",
-      Other: "Your industry can benefit from tailored sustainability strategies, ensuring responsible sourcing, energy efficiency, and waste reduction."
+    "Prioritizing Local Suppliers": {
+      "Yes": "Prioritizing local suppliers reduces transportation emissions and strengthens regional economies.",
+      "No": "Shifting to local suppliers can significantly cut emissions and support community businesses."
     },
-    "Where is your company located?": {
-      "North America": "Operating in North America, leveraging government incentives for renewable energy and engaging with local sustainability initiatives can support your green transition.",
-      Europe: "As a European company, aligning with EU sustainability regulations and investing in circular economy initiatives can be beneficial.",
-      Asia: "Companies in Asia can optimize supply chain sustainability, reduce water usage, and explore renewable energy investments.",
-      Other: "Based on your location, adopting region-specific sustainability measures, such as biodiversity protection and water conservation, can be impactful."
+    "Carbon Footprint Tracking": {
+      "Yes": "Systematic carbon tracking empowers data-driven decisions, often yielding a 20–25% improvement in targeted emission reductions.",
+      "No": "Without carbon footprint tracking, your company may forgo up to a 25% efficiency gain."
     },
-    "Does your company have a sustainability officer or committee?": {
-      Yes: "Having a dedicated sustainability officer ensures your company oversees strategy, engages stakeholders, and maintains long-term environmental goals.",
-      No: "Without a sustainability officer, forming a committee or appointing a leader can help integrate sustainability into business operations."
+    "Measures to Reduce Carbon Emissions": {
+      "Electric vehicles": "Transitioning to electric vehicles can cut fleet emissions by nearly 50%.",
+      "Carbon credits": "Strategic use of carbon credits can achieve net emission reductions of over 70%.",
+      "Remote work policies": "Implementing remote work policies has been shown to reduce commuting emissions by up to 54%.",
+      "None": "Not adopting carbon reduction measures may leave significant emission-cutting opportunities untapped.",
+      "Other": "Your custom carbon reduction approach reflects innovative leadership in sustainable practices."
     },
-    "Does your company design products with recyclability in mind?": {
-      Yes: "Your company prioritizes recyclability, leveraging AI-driven designs, modular products, and sustainable materials.",
-      No: "Consider switching to biodegradable packaging, extending product lifespans, and adopting modular design approaches."
+    "Monitoring Water Usage": {
+      "Yes": "Consistent monitoring of water usage can drive operational improvements and yield efficiency gains of around 20%.",
+      "No": "Omitting systematic water monitoring may obscure potential efficiency gains of roughly 20%."
     },
-    "Do you offer a take-back or recycling program for your products?": {
-      Yes: "Your company facilitates take-back programs, offering drop-off points and customer incentives to support recycling.",
-      No: "Implementing a take-back program and collaborating with recyclers can enhance your circular economy efforts."
+    "Steps to Reduce Water Consumption": {
+      "Low-flow fixtures": "Installing low-flow fixtures can trim water usage by almost 30%.",
+      "Water recycling systems": "Adopting water recycling systems can enable up to 80% water reuse.",
+      "Employee awareness programs": "Engaging employees in water conservation can drive savings over 20%.",
+      "None": "Neglecting water conservation strategies might mean missing opportunities for up to 25% water savings.",
+      "Other": "Your unique water-saving initiative reflects a bespoke strategy."
     },
-    "Are you ready to invest in sustainability?": {
-      Yes: "You are actively investing in sustainability by assessing ESG status, upgrading to energy-efficient solutions, and exploring sustainable financing.",
-      No: "Starting with small steps such as LED lighting, digital invoices, and basic regulatory alignments can lay the foundation for sustainability."
+    "Sustainability Training for Employees": {
+      "Yes": "Your robust training program boosts efficiency and engagement, supporting sustainable transformation.",
+      "No": "Without structured training, you risk missing efficiency gains and strategic insights for sustainability."
+    },
+    "Sustainability Officer or Committee": {
+      "Yes": "Oversee sustainability strategy and ensure compliance with ESG regulations.",
+      "No": "Form a committee or appoint a dedicated officer to improve sustainability structure."
+    },
+    "Product Lifecycle & Circular Economy": {
+      "Yes": "Implement AI-driven design for recyclable products, extend product lifespans, and adopt modular designs.",
+      "No": "Switch to biodegradable packaging, extend product lifespans, and offer refurbishment services."
+    },
+    "Take-back or Recycling Program": {
+      "Yes": "Increase drop-off points, provide mail-back services, and integrate recycled materials into the supply chain.",
+      "No": "Establish a take-back program and partner with specialized recyclers."
+    },
+    "Investment in Sustainability": {
+      "Yes": "Assess carbon footprint, implement renewable energy solutions, and train employees in sustainability.",
+      "No": "Start with cost-saving measures like LED lighting, digital invoices, and waste reduction programs."
+    },
+    "Sustainability as a Key Business Aspect": {
+      "Yes": "Integrating sustainability reduces costs, improves brand reputation, and aligns with regulations.",
+      "No": "Small changes like energy-saving practices and digital invoices can enhance operations without major investment."
     }
   };
 
@@ -68,11 +93,11 @@ export default function SustainabilitySurvey() {
 
   const generateReport = () => {
     return (
-      "Your Finished Short Report: " +
+      "Your Sustainability Report: " +
       Object.keys(answers)
         .map((question) => responses[question]?.[answers[question]] || "")
         .join(" ") +
-      " If you are interested in a longer, more detailed report and our consulting service, please contact us."
+      " If you need a detailed report and consultation, contact us."
     );
   };
 
@@ -80,12 +105,8 @@ export default function SustainabilitySurvey() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-6 py-12">
       {!showReport ? (
         <div className="bg-white shadow-2xl rounded-3xl p-8 max-w-xl w-full text-center">
-          <h1 className="text-4xl font-extrabold text-green-700 mb-6">
-            🌍 Sustainability Survey
-          </h1>
-          <h2 className="text-xl font-semibold text-gray-800 mb-6">
-            {questions[step].question}
-          </h2>
+          <h1 className="text-4xl font-extrabold text-green-700 mb-6">🌍 Sustainability Survey</h1>
+          <h2 className="text-xl font-semibold text-gray-800 mb-6">{questions[step].question}</h2>
           <div className="flex flex-col space-y-4">
             {questions[step].options.map((option, index) => (
               <button
