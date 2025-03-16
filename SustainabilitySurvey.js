@@ -139,7 +139,7 @@ export default function SustainabilitySurvey() {
 
   return (
    <div
-  className="w-full h-screen flex flex-col items-center justify-center px-6 py-12"
+  className="min-h-screen flex flex-col items-center justify-center px-12 py-24 text-center"
   style={{
   backgroundImage: "url('/Sustainify.png')",
   backgroundSize: "cover",
@@ -161,7 +161,7 @@ export default function SustainabilitySurvey() {
              <button
   key={index}
   onClick={() => handleAnswer(option)}
-  className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg border border-white"
+  className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg border border-white shadow-lg"
 >
   {option}
 </button>
