@@ -27,46 +27,46 @@ export default function SustainabilitySurvey() {
 
   const responses = {
      "Size of the Company": {
-      "Small": "Focus on low-cost sustainability initiatives such as energy efficiency, remote work policies, and minimizing paper use.",
-      "Medium": "Implement sustainability policies, conduct energy audits, and engage employees in green initiatives.",
-      "Large": "Develop a company-wide sustainability strategy, set measurable goals, and invest in renewable energy."
+      "Small": "Thank you very much for answering the form. Here are our consultations for your company to improve its sustainability. Focus on low-cost sustainability initiatives such as energy efficiency, remote work policies, and minimizing paper use.",
+      "Medium": "Thank you very much for answering the form. Here are our consultations for your company to improve its sustainability. Implement sustainability policies, conduct energy audits, and engage employees in green initiatives.",
+      "Large": "Thank you very much for answering the form. Here are our consultations for your company to improve its sustainability. Develop a company-wide sustainability strategy, set measurable goals, and invest in renewable energy."
     },
     "Industry": {
-      "Manufacturing": "Improve energy efficiency, source sustainable materials, and reduce industrial waste.",
-      "Retail": "Optimize supply chain sustainability, reduce packaging waste, and promote recycling programs.",
-      "Technology": "Reduce electronic waste, optimize data center efficiency, and promote remote work.",
-      "Hospitality": "Reduce water and energy consumption, implement waste reduction strategies, and use eco-friendly amenities.",
-      "Transportation": "Transition to electric vehicles, optimize logistics, and offset carbon emissions.",
-      "Health": "Minimize medical waste, use energy-efficient equipment, and adopt sustainable procurement practices.",
-      "Other": "Adapt sustainability strategies based on industry best practices."
+      "Manufacturing": "As your company is in the manufacturing industry, improve energy efficiency, source sustainable materials, and reduce industrial waste.",
+      "Retail": "As your company is in the retail industry, optimize supply chain sustainability, reduce packaging waste, and promote recycling programs.",
+      "Technology": "As your company is in the technology industry, reduce electronic waste, optimize data center efficiency, and promote remote work.",
+      "Hospitality": "As your company is in the hospitality industry, reduce water and energy consumption, implement waste reduction strategies, and use eco-friendly amenities.",
+      "Transportation": "As your company is in the transportation industry, transition to electric vehicles, optimize logistics, and offset carbon emissions.",
+      "Health": "As your company is in the health industry, minimize medical waste, use energy-efficient equipment, and adopt sustainable procurement practices.",
+      "Other": "Try to adapt sustainability strategies based on industry best practices."
     },
     "Geographical Zone": {
       "North America": "Leverage government incentives for renewable energy and engage with local sustainability initiatives.",
-      "Europe": "Align with EU sustainability regulations and invest in circular economy initiatives.",
-      "Asia": "Optimize supply chain sustainability, reduce water usage, and explore renewable energy investments.",
-      "Africa": "Focus on water conservation, renewable energy (solar), and sustainable sourcing practices.",
-      "South America": "Implement deforestation prevention strategies, support biodiversity conservation, and improve sustainable agriculture sourcing.",
-      "Oceania": "Address climate change resilience, invest in renewable energy, and protect biodiversity in supply chains."
+      "Europe": "Try to align with EU sustainability regulations and invest in circular economy initiatives.",
+      "Asia": "Try to optimize supply chain sustainability, reduce water usage, and explore renewable energy investments.",
+      "Africa": "Try to focus on water conservation, renewable energy (solar), and sustainable sourcing practices.",
+      "South America": "Try to implement deforestation prevention strategies, support biodiversity conservation, and improve sustainable agriculture sourcing.",
+      "Oceania": "Try to address climate change resilience, invest in renewable energy, and protect biodiversity in supply chains."
     },
     "Energy Consumption & Efficiency": {
-      "Does not monitor": "Implement an energy tracking system to identify inefficiencies and reduce consumption.",
-      "Uses renewable energy": "Continue investment in renewable sources and explore energy storage solutions.",
-      "Uses non-renewable energy": "Transition to cleaner energy alternatives, improve energy efficiency, and explore carbon offset programs.",
-      "Uses a mix": "Increase the percentage of renewable energy used and implement energy efficiency measures."
+      "Does not monitor": "It is very important for your company to implement an energy tracking system to identify inefficiencies and reduce consumption.",
+      "Uses renewable energy": "It is very important for your company to continue investment in renewable sources and explore energy storage solutions.",
+      "Uses non-renewable energy": "It is very important for your company to transition to cleaner energy alternatives, improve energy efficiency, and explore carbon offset programs.",
+      "Uses a mix": "It is very important for your company to increase the percentage of renewable energy used and implement energy efficiency measures."
     },
     "Waste Management": {
-      "No waste reduction strategy": "Develop a formal plan including waste audits, reduction targets, and employee training.",
-      "Disposes in landfills": "Reduce landfill waste through improved sorting, recycling initiatives, and supplier engagement.",
-      "Recycles": "Expand recycling programs, encourage employees to participate, and work with vendors to improve recyclability of materials.",
-      "Composts": "Increase composting awareness within the company, partner with local composting services, and ensure proper waste sorting."
+      "No waste reduction strategy": "Waste Management is a main sustainability practice. Develop a formal plan including waste audits, reduction targets, and employee training.",
+      "Disposes in landfills": "Waste Management is a main sustainability practice. Reduce landfill waste through improved sorting, recycling initiatives, and supplier engagement.",
+      "Recycles": "Waste Management is a main sustainability practice. Expand recycling programs, encourage employees to participate, and work with vendors to improve recyclability of materials.",
+      "Composts": "Waste Management is a main sustainability practice. Increase composting awareness within the company, partner with local composting services, and ensure proper waste sorting."
     },
     "Supplier Sustainability": {
-      "Yes": "Expanding sustainability criteria in procurement ensures ongoing environmental responsibility.",
-      "No": "Requesting sustainability policies from suppliers is an easy first step."
+      "Yes": " Expanding sustainability criteria in procurement ensures ongoing environmental responsibility. Encouraging suppliers to adopt greener practices fosters long-term positive impact. Regular reviews and third-party certifications strengthen sustainable sourcing.",
+      "No": " Requesting sustainability policies from suppliers is an easy first step. Prioritizing local, eco-conscious vendors reduces emissions and supports greener practices. Integrating sustainability criteria into procurement enhances responsible sourcing."
     },
     "Prioritizing Local Suppliers": {
-      "Yes": "Prioritizing local suppliers reduces transportation emissions and strengthens regional economies.",
-      "No": "Shifting to local suppliers can significantly cut emissions and support community businesses."
+      "Yes": "Prioritizing local suppliers reduces transportation emissions and strengthens regional economies. Sourcing locally ensures fresher materials, supports ethical labor practices, and lowers logistics costs. Strengthening partnerships with sustainable local businesses enhances supply chain resilience.",
+      "No": "Shifting to local suppliers can significantly cut emissions and support community businesses. Evaluating transportation impact and working with vendors closer to operations improves sustainability. Gradually transitioning to local sourcing strengthens both environmental and economic sustainability."
     },
     "Carbon Footprint Tracking": {
       "Yes": "Systematic carbon tracking empowers data-driven decisions, often yielding a 20–25% improvement in targeted emission reductions.",
@@ -91,8 +91,8 @@ export default function SustainabilitySurvey() {
       "Other": "Your unique water-saving initiative reflects a bespoke strategy."
     },
     "Sustainability Training for Employees": {
-      "Yes": "Your robust training program boosts efficiency and engagement, supporting sustainable transformation.",
-      "No": "Without structured training, you risk missing efficiency gains and strategic insights for sustainability."
+      "Yes": "Training for employees is a great possibility for your company to achieve good. Your robust training program boosts efficiency and engagement, supporting sustainable transformation.",
+      "No": "Training for employees can be great possibility for your company to achieve good. Without structured training, you risk missing efficiency gains and strategic insights for sustainability."
     },
     "Sustainability Officer or Committee": {
       "Yes": "Oversee sustainability strategy and ensure compliance with ESG regulations.",
@@ -103,16 +103,16 @@ export default function SustainabilitySurvey() {
       "No": "Switch to biodegradable packaging, extend product lifespans, and offer refurbishment services."
     },
     "Take-back or Recycling Program": {
-      "Yes": "Increase drop-off points, provide mail-back services, and integrate recycled materials into the supply chain.",
-      "No": "Establish a take-back program and partner with specialized recyclers."
+      "Yes": " For your recycling program, try to increase drop-off points, provide mail-back services, and integrate recycled materials into the supply chain.",
+      "No": " For your recycling program, try to establish a take-back program and partner with specialized recyclers."
     },
     "Investment in Sustainability": {
-      "Yes": "Assess carbon footprint, implement renewable energy solutions, and train employees in sustainability.",
-      "No": "Start with cost-saving measures like LED lighting, digital invoices, and waste reduction programs."
+      "Yes": "To invest further in sustainability, pay attention to assessing your carbon footprint, implement renewable energy solutions, and train employees in sustainability.",
+      "No": "To start investing in sustainability, start with cost-saving measures like LED lighting, digital invoices, and waste reduction programs."
     },
     "Sustainability as a Key Business Aspect": {
-      "Yes": "Integrating sustainability reduces costs, improves brand reputation, and aligns with regulations.",
-      "No": "Small changes like energy-saving practices and digital invoices can enhance operations without major investment."
+      "Yes": "Sustainability should remain a main aspect of your strategy. Integrating sustainability reduces costs, improves brand reputation, and aligns with regulations.",
+      "No": "Sustainability should become a main aspect of your strategy and can be achieved in small steps. Small changes like energy-saving practices and digital invoices can enhance operations without major investment."
     }
   };
 
