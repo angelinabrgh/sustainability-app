@@ -131,7 +131,7 @@ export default function SustainabilitySurvey() {
       Object.keys(answers)
         .map((question) => responses[question]?.[answers[question]] || "")
         .join(" ") +
-      " If you need a detailed report and consultation, contact us."
+      " The Sustainify team hopes this brief report inspires you to take action toward becoming a more sustainable company. If you're interested in a detailed report and professional consultation, feel free to contact us at sustainify@gmail.com."
     );
   };
 
