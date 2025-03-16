@@ -145,29 +145,32 @@ export default function SustainabilitySurvey() {
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
-  height: "100vh",  
-  width: "100vw"    
+  width: "100vw",
+  height: "100vh",
+  position: "fixed",
+  top: 0,
+  left: 0
 }}
 >
       {!showReport ? (
         <div className="bg-white shadow-2xl rounded-3xl p-8 max-w-xl w-full text-center">
-          <h1 className="text-4xl font-extrabold text-green-700 mb-6">🌍 Sustainability Survey</h1>
-          <h2 className="text-xl font-semibold text-gray-800 mb-6">{questions[step].question}</h2>
+         <h1 className="text-4xl font-extrabold text-white mb-6">🌍 Sustainability Survey</h1>
+         <h2 className="text-xl font-semibold text-white mb-6">{questions[step].question}</h2>
           <div className="flex flex-col space-y-4">
             {questions[step].options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswer(option)}
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg"
-              >
-                {option}
-              </button>
+             <button
+  key={index}
+  onClick={() => handleAnswer(option)}
+  className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg border border-white"
+>
+  {option}
+</button>
             ))}
           </div>
         </div>
       ) : (
         <div className="bg-white p-6 rounded-3xl shadow-2xl max-w-xl w-full text-left">
-          <p className="text-gray-700">{generateReport()}</p>
+          <p className="text-white">{generateReport()}</p>
         </div>
       )}
     </div>
