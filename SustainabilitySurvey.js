@@ -26,6 +26,40 @@ export default function SustainabilitySurvey() {
   ];
 
   const responses = {
+     "Size of the Company": {
+      "Small": "Focus on low-cost sustainability initiatives such as energy efficiency, remote work policies, and minimizing paper use.",
+      "Medium": "Implement sustainability policies, conduct energy audits, and engage employees in green initiatives.",
+      "Large": "Develop a company-wide sustainability strategy, set measurable goals, and invest in renewable energy."
+    },
+    "Industry": {
+      "Manufacturing": "Improve energy efficiency, source sustainable materials, and reduce industrial waste.",
+      "Retail": "Optimize supply chain sustainability, reduce packaging waste, and promote recycling programs.",
+      "Technology": "Reduce electronic waste, optimize data center efficiency, and promote remote work.",
+      "Hospitality": "Reduce water and energy consumption, implement waste reduction strategies, and use eco-friendly amenities.",
+      "Transportation": "Transition to electric vehicles, optimize logistics, and offset carbon emissions.",
+      "Health": "Minimize medical waste, use energy-efficient equipment, and adopt sustainable procurement practices.",
+      "Other": "Adapt sustainability strategies based on industry best practices."
+    },
+    "Geographical Zone": {
+      "North America": "Leverage government incentives for renewable energy and engage with local sustainability initiatives.",
+      "Europe": "Align with EU sustainability regulations and invest in circular economy initiatives.",
+      "Asia": "Optimize supply chain sustainability, reduce water usage, and explore renewable energy investments.",
+      "Africa": "Focus on water conservation, renewable energy (solar), and sustainable sourcing practices.",
+      "South America": "Implement deforestation prevention strategies, support biodiversity conservation, and improve sustainable agriculture sourcing.",
+      "Oceania": "Address climate change resilience, invest in renewable energy, and protect biodiversity in supply chains."
+    },
+    "Energy Consumption & Efficiency": {
+      "Does not monitor": "Implement an energy tracking system to identify inefficiencies and reduce consumption.",
+      "Uses renewable energy": "Continue investment in renewable sources and explore energy storage solutions.",
+      "Uses non-renewable energy": "Transition to cleaner energy alternatives, improve energy efficiency, and explore carbon offset programs.",
+      "Uses a mix": "Increase the percentage of renewable energy used and implement energy efficiency measures."
+    },
+    "Waste Management": {
+      "No waste reduction strategy": "Develop a formal plan including waste audits, reduction targets, and employee training.",
+      "Disposes in landfills": "Reduce landfill waste through improved sorting, recycling initiatives, and supplier engagement.",
+      "Recycles": "Expand recycling programs, encourage employees to participate, and work with vendors to improve recyclability of materials.",
+      "Composts": "Increase composting awareness within the company, partner with local composting services, and ensure proper waste sorting."
+    }
     "Supplier Sustainability": {
       "Yes": "Expanding sustainability criteria in procurement ensures ongoing environmental responsibility.",
       "No": "Requesting sustainability policies from suppliers is an easy first step."
