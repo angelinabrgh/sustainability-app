@@ -141,7 +141,7 @@ export default function SustainabilitySurvey() {
    <div
   className="min-h-screen flex flex-col items-center justify-center px-6 py-12"
   style={{
-    backgroundImage: "url('../styles/assets/Sustainify.png')",
+    backgroundImage: "url('/Sustainify.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat"
