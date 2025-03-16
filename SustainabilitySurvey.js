@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import backgroundImage from "../styles/assets/Sustainify.png";
+
 
 
 export default function SustainabilitySurvey() {
