@@ -59,7 +59,7 @@ export default function SustainabilitySurvey() {
       "Disposes in landfills": "Reduce landfill waste through improved sorting, recycling initiatives, and supplier engagement.",
       "Recycles": "Expand recycling programs, encourage employees to participate, and work with vendors to improve recyclability of materials.",
       "Composts": "Increase composting awareness within the company, partner with local composting services, and ensure proper waste sorting."
-    }
+    },
     "Supplier Sustainability": {
       "Yes": "Expanding sustainability criteria in procurement ensures ongoing environmental responsibility.",
       "No": "Requesting sustainability policies from suppliers is an easy first step."
