@@ -149,38 +149,33 @@ export default function SustainabilitySurvey() {
       width: "100%",
     }}
   >
+    {!showReport ? (
+      <div className="bg-white shadow-2xl rounded-3xl p-8 max-w-xl w-full text-center">
+        <h1 className="text-2xl sm:text-4xl font-extrabold text-white mb-6">
+          🌍 Sustainability Survey
+        </h1>
+        <h2 className="text-lg sm:text-xl font-semibold text-white mb-6">
+          {questions[step].question}
+        </h2>
 
- style={{
-  backgroundImage: "url('/Sustainify.png')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  minHeight: "100vh",
-  width: "100%",
-}}
->
-      {!showReport ? (
-        <div className="bg-white shadow-2xl rounded-3xl p-8 max-w-xl w-full text-center">
-         <h1 className="text-2xl sm:text-4xl font-extrabold text-white mb-6">🌍 Sustainability Survey</h1>
-         <h2 className="text-lg sm:text-xl font-semibold text-white mb-6">{questions[step].question}</h2>
-
-      <div className="flex flex-col space-y-6">
-            {questions[step].options.map((option, index) => (
-             <button
-  key={index}
-  onClick={() => handleAnswer(option)}
-  className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg border border-white shadow-lg"
->
-  {option}
-</button>
-            ))}
-          </div>
+        <div className="flex flex-col space-y-6">
+          {questions[step].options.map((option, index) => (
+            <button
+              key={index}
+              onClick={() => handleAnswer(option)}
+              className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-3 rounded-lg border border-white shadow-lg text-sm sm:text-base"
+            >
+              {option}
+            </button>
+          ))}
         </div>
-      ) : (
-        <div className="bg-white p-6 rounded-3xl shadow-2xl max-w-xl w-full text-left">
-  <p className="text-white">{generateReport()}</p>
-</div>
-      )}
-    </div>
-  );
-}
+      </div>
+    ) : (
+      <div className="bg-white p-6 rounded-3xl shadow-2xl max-w-xl w-full text-left overflow-y-auto max-h-[80vh]">
+        <p className="text-sm sm:text-base text-gray-800 break-words">
+          {generateReport()}
+        </p>
+      </div>
+    )}
+  </div>
+);
