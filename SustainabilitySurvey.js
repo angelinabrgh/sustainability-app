@@ -139,24 +139,23 @@ export default function SustainabilitySurvey() {
 
   return (
    <div
-  className="min-h-screen flex flex-col items-center justify-center px-12 py-24 text-center"
+className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-12 py-12 sm:py-24 text-center">
   style={{
+ style={{
   backgroundImage: "url('/Sustainify.png')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
-  width: "100vw",
-  height: "100vh",
-  position: "fixed",
-  top: 0,
-  left: 0
+  minHeight: "100vh",
+  width: "100%",
 }}
 >
       {!showReport ? (
         <div className="bg-white shadow-2xl rounded-3xl p-8 max-w-xl w-full text-center">
-         <h1 className="text-4xl font-extrabold text-white mb-6">🌍 Sustainability Survey</h1>
-         <h2 className="text-xl font-semibold text-white mb-6">{questions[step].question}</h2>
-          <div className="flex flex-col space-y-4">
+         <h1 className="text-2xl sm:text-4xl font-extrabold text-white mb-6">🌍 Sustainability Survey</h1>
+         <h2 className="text-lg sm:text-xl font-semibold text-white mb-6">{questions[step].question}</h2>
+
+      <div className="flex flex-col space-y-6">
             {questions[step].options.map((option, index) => (
              <button
   key={index}
@@ -170,8 +169,8 @@ export default function SustainabilitySurvey() {
         </div>
       ) : (
         <div className="bg-white p-6 rounded-3xl shadow-2xl max-w-xl w-full text-left">
-          <p className="text-white">{generateReport()}</p>
-        </div>
+  <p className="text-white">{generateReport()}</p>
+</div>
       )}
     </div>
   );
